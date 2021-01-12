@@ -9,17 +9,17 @@
 
 # Users
 
-franklin = User.create!(first_name: 'Franklin', last_name: 'Bado', email: 'franklin@gmail.com', password_digest: 'password', phone: 123)
-marlon = User.create!(first_name: 'Marlon', last_name: 'Braga', email: 'marlon@gmail.com', password_digest: 'password', phone: 456)
+franklin = User.create!(first_name: 'Franklin', last_name: 'Bado', email: 'franklin@gmail.com', password_digest: 'password', phone: 123, address: '123 Main Rd', capital: 100)
+marlon = User.create!(first_name: 'Marlon', last_name: 'Braga', email: 'marlon@gmail.com', password_digest: 'password', phone: 456, address: '143 Main St', capital: 200)
 
 
 # Products 
-orange = Product.create!(name: 'Orange', description: 'fruit', image: 'soone werwfadsfgwegfw.png', price: 4, user:franklin)
-apple = Product.create!(name: 'Apple', description: 'fruit', image: 'soone wer23r zvxd .png', price: 2, user:franklin)
-banana = Product.create!(name: 'Banana', description: 'fruit', image: 'soone werwfaf3r2dsfgwegfw.png', price: 10, user:franklin)
+orange = Product.create!(name: 'Orange', description: 'fruit', image: 'soone werwfadsfgwegfw.png', category: 'food', price: 4, user:franklin)
+apple = Product.create!(name: 'Apple', description: 'fruit', image: 'soone wer23r zvxd .png', category: 'food', price: 2, user:franklin)
+banana = Product.create!(name: 'Banana', description: 'fruit', image: 'soone werwfaf3r2dsfgwegfw.png', category: 'food', price: 10, user:franklin)
 
-phone = Product.create!(name: 'Phone', description: 'electronic', image: 'soone werwf23r23 fsad.png', price: 400, user:marlon)
-tv = Product.create!(name: 'TV', description: 'electronic', image: 'soone werwfadsfgwsdafegfw.png', price: 350, user:marlon)
+phone = Product.create!(name: 'Phone', description: 'dope phone', image: 'soone werwf23r23 fsad.png', category:'electronics', price: 400, user:marlon)
+tv = Product.create!(name: 'TV', description: 'dope tv', image: 'soone werwfadsfgwsdafegfw.png', category: 'electronics', price: 350, user:marlon)
 
 
 

@@ -1,12 +1,15 @@
 class ProductsController < ApplicationController
 
+    before_action :authorized, only: [:create]
+
+
     def index
         @products = Product.all 
         render json: @products 
     end 
 
     def create
-        @product = Product.create!(product_params)
+        @product = @user.products.create(product_params)
         render json: @product 
     end 
 
@@ -17,7 +20,7 @@ class ProductsController < ApplicationController
 
     private 
     def product_params
-        params.permit(:name, :description, :image, :price, :user_id, :category)
+        params.permit(:name, :description, :image, :price, :category)
     end 
 
 end

@@ -6,6 +6,11 @@ Product.destroy_all
 franklin = User.create!(first_name: 'Franklin', last_name: 'Bado', email: 'franklin@gmail.com', password: 'password', phone: 123, address: '123 Main Rd', capital: 100)
 marlon = User.create!(first_name: 'Marlon', last_name: 'Braga', email: 'marlon@gmail.com', password: 'password', phone: 456, address: '143 Main St', capital: 200)
 
+#Carts 
+
+Cart.create!(user: franklin)
+Cart.create!(user: marlon)
+
 
 # Products 
 orange = Product.create!(name: 'Orange', description: 'fruit', image: 'soone werwfadsfgwegfw.png', category: 'food', price: 4, user:franklin)

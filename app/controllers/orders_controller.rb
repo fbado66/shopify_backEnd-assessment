@@ -1,14 +1,14 @@
 class OrdersController < ApplicationController
 
     before_action :authorized, only: [:create]
-    
+
     def index 
         @orders = Order.all
         render json: @orders
     end 
 
     def create 
-        @order = @user.orders.create!(order_params)
+        @order = Order.create!(order_params)
         render json: @order
     end 
 
@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
 
     private 
     def order_params
-        params.permit(:product_id, :quantity)
+        params.permit(:product_id, :cart_id, :bought)
     end 
 
 end

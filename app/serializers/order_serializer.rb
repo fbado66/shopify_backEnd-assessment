@@ -1,5 +1,5 @@
 class OrderSerializer < ActiveModel::Serializer
-  attributes :buyer_name, :id
+  attributes :id
   belongs_to :product
 end
 

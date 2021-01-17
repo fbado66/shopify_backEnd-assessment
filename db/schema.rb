@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2021_01_17_160858) do
     t.string "image"
     t.integer "price"
     t.string "category"
+    t.string "availability"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -47,7 +48,7 @@ ActiveRecord::Schema.define(version: 2021_01_17_160858) do
     t.string "last_name"
     t.string "password_digest"
     t.string "email"
-    t.integer "phone"
+    t.bigint "phone"
     t.integer "capital"
     t.string "address"
     t.datetime "created_at", precision: 6, null: false

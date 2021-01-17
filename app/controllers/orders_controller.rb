@@ -1,8 +1,7 @@
 class OrdersController < ApplicationController
 
     before_action :authorized, only: [:create]
-
-
+    
     def index 
         @orders = Order.all
         render json: @orders
@@ -16,6 +15,12 @@ class OrdersController < ApplicationController
     def show 
         @order = Order.find(params[:id])
         render json: @order 
+    end 
+
+    def destroy
+        @order = Order.find(params[:id])
+        @order.destroy
+        render json: @order
     end 
 
     private 

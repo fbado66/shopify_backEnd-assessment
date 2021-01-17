@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_12_035554) do
+ActiveRecord::Schema.define(version: 2021_01_17_022822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "history_carts", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "product_name"
+    t.integer "product_price"
+    t.string "product_seller"
+    t.string "product_image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_history_carts_on_user_id"
+  end
 
   create_table "orders", force: :cascade do |t|
     t.integer "quantity"
@@ -49,6 +60,7 @@ ActiveRecord::Schema.define(version: 2021_01_12_035554) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "history_carts", "users"
   add_foreign_key "orders", "products"
   add_foreign_key "orders", "users"
   add_foreign_key "products", "users"

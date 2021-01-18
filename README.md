@@ -9,6 +9,7 @@ This repository is the database for the fictious site snapUpy. This API is sendi
 <li>The use of Cloudinary to upload images </li>
 
 ## Domain Model 
+<img src='domain_model.png' />
 
 ## Tech Stacks 
 <li>Ruby on rails '2.6.1' </li>
